@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #main{
+      width: 640px;
+      height: 360px;
+      border: 1px solid black;
+    }
+  </style>
+  <script src="./echarts.min.js"></script>
+</head>
+<body>
+  <div id="main"></div>
+  <script>
+  let mchart=  echarts.init(document.getElementById('main'));
+  let option={
+        title: {
+          text: 'ECharts 入门示例',
+          textStyle:{
+            color:'red',
+          },
+          left:25,
+         top:16
+        },
+        tooltip: {},
+        legend: {
+          data: ['销量']   //与35行名字一致
+        },
+        xAxis: {
+          data: ['衬衫', '羊毛衫', '雪纺衫', '裤子', '高跟鞋', '袜子','裙子','帽子']
+        },
+        yAxis: {},
+        series: [
+          {
+            color:'red',
+            name: '销量',
+            type: 'bar',  //line是折线图，bar是柱状图
+            data: [5, 20, 36, 10, 10, 20, 15, 25]
+          }
+        ]
+      };
+  mchart.setOption(option);
+  </script>
+</body>
+</html>
